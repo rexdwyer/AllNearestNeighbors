@@ -310,11 +310,13 @@ void Deletion::process(Sweepline * sweepline) {
   swroot = SweepTree::splay(swroot, this->site->y);
   swroot->left = SweepTree::splay(swroot->left, this->site->y);
   swroot->right = SweepTree::splay(swroot->right, this->site->y);
+  SweepTree *p = swroot;
   if (swroot->right) {
     swroot->right->left = swroot->left;
     swroot = swroot->right;
   }
   else swroot = swroot->left;
+  delete p;
   sweepline->root = swroot;
   if (sweepline->root) {
     sweepline->schedule_deletion_if_needed(sweepline->root->right);
@@ -385,7 +387,9 @@ void Insertion::process(Sweepline * sweepline) {
 				      swroot->right->right->rec)
 	   ) {
       swroot->right->rec->active = false;
+      SweepTree * p = swroot->right;
       swroot->right = swroot->right->right;
+      delete p;
       swroot->right->right = SweepTree::splay(swroot->right->right, newy);
       dist = site->distance2(swroot->right->rec);
       if (dist < bestdist) { 
@@ -410,7 +414,9 @@ void Insertion::process(Sweepline * sweepline) {
 				      swroot->rec)
 	   ) {
       swroot->left->rec->active = false;
+      SweepTree * p = swroot->left;
       swroot->left = swroot->left->left;
+      delete p;
       swroot->left->left = SweepTree::splay(swroot->left->left, newy);
       dist = site->distance2(swroot->left->rec);
       if (dist < bestdist) { 
