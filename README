@@ -13,15 +13,20 @@ This is the C++ source for the sweepline algorithm.
 
 class notes.pdf
 These are some old class notes written when I taught this algorithm in
-a data structures course.  Unfortunately the text refers to some
-diagrams that I can no longer find.
+a data structures course. 
+
+allfigs.pdf
+Figures that go with the class notes.
+
+allfigs.ps
+PostScript file for the figures.    (Remember PostScript?)
 
 pictures.pdf 
 These diagrams trace the algorithm step by step through a
 set of a couple of dozen points.
 
 pictures.ps
-A PostScript file for the diagrams.  (Remember PostScript?)
+A PostScript file for the diagrams.
 
 points1000
 A set of 1000 points that you may wish to use as an example input.

@@ -1,0 +1,443 @@
+%!
+
+/drawseg {moveto lineto stroke} def
+
+/arrowdict 24 dict def
+arrowdict begin /mtrx matrix def end
+
+/arrow {arrowdict begin
+  /savematrix mtrx currentmatrix def
+  4 copy moveto lineto stroke
+  2 copy translate     % move to tail
+  /dy exch def
+  /dx exch def
+  /dy exch dy exch sub def
+  /dx exch dx exch sub def
+  dy dx atan rotate
+  -0.010 0 moveto
+  -0.02 0.01 rlineto
+   0 -0.02 rlineto closepath fill
+    
+  savematrix setmatrix
+end } def
+
+/neighboredge {arrow} def
+
+
+/active {0.015 0 360 arc fill} def
+/dead {2 copy active 0.007 0 360 arc 1 setgray fill 0 setgray} def
+/unseen {0.7 setgray active 0 setgray} def
+/hseg {-0.25 exch dup 1.25 exch drawseg} def
+
+/startapage {
+/Times-Roman findfont 0.1 scalefont  setfont
+3 72 mul dup scale
+0.5 1.5 translate
+0 setlinecap
+2 setlinejoin
+0.007  setlinewidth
+0 -0.2 moveto show newpath
+} def
+
+/p1 {0.093299 0.016449} def
+/p2 {0.181572 0.410549} def
+/p3 {0.187443 0.339103} def
+/p4 {0.250000 0.600000} def
+/p5 {0.324351 0.054179} def
+/p6 {0.372687 0.011351} def
+/p7 {0.435021 0.951809} def
+/p8 {0.467891 0.000584} def
+/p9 {0.490936 0.987765} def
+/p10 {0.518297 0.092132} def
+/p11 {0.588278 0.279430} def
+/p12 {0.669669 0.068574} def
+/p13 {0.850000 0.580000} def
+/p14 {0.999990 0.738417} def
+/p15 {0.941789 0.400000} def
+/p16 {0.963884 0.330430} def
+/p17 {0.105475 0.703992} def
+/p18 {0.164019 0.734749} def
+/p19 {0.224000 0.745000} def
+/p20 {0.275791 0.748666} def
+/p21 {0.312105 0.742163} def
+/p22 {0.415538 0.687342} def
+/p23 {0.500000 0.650000} def
+/p24 {0.300000 0.900000} def
+/p25 {0.400000 0.800000} def
+/p26 {0.800000 0.950000} def
+
+(Fig. 1) startapage
+p1  active
+p2  active
+p3  active
+p4  active
+p5  active
+p6  active
+p7  active
+p8  active
+p9  active
+p10  active
+p11  active
+p12  active
+p13  active
+p14  active
+p15  active
+p16  active
+p17  active
+p18  active
+p19  active
+p20  active
+p21  active
+p22  active
+p23  active
+p24  active
+p25  active
+p26  active
+p1 p5 neighboredge
+p2 p3 neighboredge
+p3 p2 neighboredge
+p4 p19 neighboredge
+p5 p6 neighboredge
+p6 p5 neighboredge
+p7 p9 neighboredge
+p8 p6 neighboredge
+p9 p7 neighboredge
+p10 p8 neighboredge
+p11 p10 neighboredge
+p12 p10 neighboredge
+p13 p14 neighboredge
+p14 p13 neighboredge
+p15 p16 neighboredge
+p16 p15 neighboredge
+p17 p18 neighboredge
+p18 p19 neighboredge
+p19 p20 neighboredge
+p20 p21 neighboredge
+p21 p20 neighboredge
+p22 p23 neighboredge
+p23 p22 neighboredge
+p24 p25 neighboredge
+p25 p21 neighboredge
+p26 p14 neighboredge
+showpage
+
+
+(Fig. 3) startapage
+p1 p6 neighboredge
+p2 p3 neighboredge
+p3 p5 neighboredge
+p4 p2 neighboredge
+p5 p6 neighboredge
+p6 p8 neighboredge
+p7 p24 neighboredge
+p9 p7 neighboredge
+p10 p8 neighboredge
+p11 p10 neighboredge
+p12 p8 neighboredge
+p13 p15 neighboredge
+p14 p13 neighboredge
+p15 p16 neighboredge
+p16 p11 neighboredge
+p17 p4 neighboredge
+p18 p17 neighboredge
+p19 p18 neighboredge
+p20 p21 neighboredge
+p21 p22 neighboredge
+p22 p23 neighboredge
+p23 p4 neighboredge
+p24 p25 neighboredge
+p25 p21 neighboredge
+p26 p14 neighboredge
+
+p1 active
+p2 active
+p3 active
+p4 active
+p5 active
+p6 active
+p7 active
+p8 active
+p9 active
+p10 active
+p11 active
+p12 active
+p13 active
+p14 active
+p15 active
+p16 active
+p17 active
+p18 active
+p19 active
+p20 active
+p21 active
+p22 active
+p23 active
+p24 active
+p25 active
+p26 active
+
+showpage
+
+
+/neighboredge {pop pop pop pop} def
+
+
+(Fig. 5) startapage
+0.600000 hseg
+p4 p19 neighboredge
+p7 p9 neighboredge
+p14 p26 neighboredge
+p17 p18 neighboredge
+p18 p19 neighboredge
+p19 p20 neighboredge
+p20 p25 neighboredge
+p21 p20 neighboredge
+p22 p25 neighboredge
+p23 p22 neighboredge
+p24 p7 neighboredge
+p25 p24 neighboredge
+p26 p9 neighboredge
+
+p1 unseen
+p2 unseen
+p3 unseen
+p4 active
+p5 unseen
+p6 unseen
+p7 dead
+p8 unseen
+p9 dead
+p10 unseen
+p11 unseen
+p12 unseen
+p13 unseen
+p14 active
+p15 unseen
+p16 unseen
+p17 active
+p18 dead
+p19 dead
+p20 dead
+p21 dead
+p22 active
+p23 active
+p24 dead
+p25 dead
+p26 dead
+
+0.177737 0.651996 moveto 0.118738 0.570000 lineto stroke
+0.332769 0.643671 moveto 0.371640 0.570000 lineto stroke
+0.457769 0.668671 moveto 0.414145 0.570000 lineto stroke
+0.749995 0.694209 moveto 0.771960 0.570000 lineto stroke
+showpage
+
+
+(Fig. 6) startapage
+0.526168 hseg
+p4 p19 neighboredge
+p7 p9 neighboredge
+p13 p14 neighboredge
+p14 p26 neighboredge
+p17 p18 neighboredge
+p18 p19 neighboredge
+p19 p20 neighboredge
+p20 p25 neighboredge
+p21 p20 neighboredge
+p22 p25 neighboredge
+p23 p22 neighboredge
+p24 p7 neighboredge
+p25 p24 neighboredge
+p26 p9 neighboredge
+
+p1 unseen
+p2 unseen
+p3 unseen
+p4 active
+p5 unseen
+p6 unseen
+p7 dead
+p8 unseen
+p9 dead
+p10 unseen
+p11 unseen
+p12 unseen
+p13 active
+p14 active
+p15 unseen
+p16 unseen
+p17 active
+p18 dead
+p19 dead
+p20 dead
+p21 dead
+p22 active
+p23 active
+p24 dead
+p25 dead
+p26 dead
+
+0.177737 0.651996 moveto 0.065613 0.496168 lineto stroke
+0.332769 0.643671 moveto 0.410595 0.496168 lineto stroke
+0.457769 0.668671 moveto 0.381503 0.496168 lineto stroke
+0.675000 0.610000 moveto 0.648981 0.496168 lineto stroke
+0.924995 0.654208 moveto 1.102451 0.496168 lineto stroke
+showpage
+
+(Fig. 7) startapage
+0.526168 hseg
+p4 p19 neighboredge
+p7 p9 neighboredge
+p13 p14 neighboredge
+p14 p26 neighboredge
+p17 p18 neighboredge
+p18 p19 neighboredge
+p19 p20 neighboredge
+p20 p25 neighboredge
+p21 p20 neighboredge
+p22 p25 neighboredge
+p23 p22 neighboredge
+p24 p7 neighboredge
+p25 p24 neighboredge
+p26 p9 neighboredge
+
+p1 unseen
+p2 unseen
+p3 unseen
+p4 active
+p5 unseen
+p6 unseen
+p7 dead
+p8 unseen
+p9 dead
+p10 unseen
+p11 unseen
+p12 unseen
+p13 active
+p14 active
+p15 unseen
+p16 unseen
+p17 active
+p18 dead
+p19 dead
+p20 dead
+p21 dead
+p22 dead
+p23 active
+p24 dead
+p25 dead
+p26 dead
+
+0.177737 0.651996 moveto 0.065613 0.496168 lineto stroke
+0.375000 0.625000 moveto 0.400766 0.496168 lineto stroke
+0.675000 0.610000 moveto 0.648981 0.496168 lineto stroke
+0.924995 0.654208 moveto 1.102451 0.496168 lineto stroke
+showpage
+
+(Fig. 2) startapage
+/neighboredge {arrow} def
+p1 p5 neighboredge
+p2 p4 neighboredge
+p3 p2 neighboredge
+p4 p19 neighboredge
+p5 p10 neighboredge
+p6 p5 neighboredge
+p7 p9 neighboredge
+p8 p6 neighboredge
+p10 p11 neighboredge
+p11 p15 neighboredge
+p12 p10 neighboredge
+p13 p14 neighboredge
+p14 p26 neighboredge
+p15 p13 neighboredge
+p16 p15 neighboredge
+p17 p18 neighboredge
+p18 p19 neighboredge
+p19 p20 neighboredge
+p20 p25 neighboredge
+p21 p20 neighboredge
+p22 p25 neighboredge
+p23 p22 neighboredge
+p24 p7 neighboredge
+p25 p24 neighboredge
+p26 p9 neighboredge
+
+p1 active
+p2 active
+p3 active
+p4 active
+p5 active
+p6 active
+p7 active
+p8 active
+p9 active
+p10 active
+p11 active
+p12 active
+p13 active
+p14 active
+p15 active
+p16 active
+p17 active
+p18 active
+p19 active
+p20 active
+p21 active
+p22 active
+p23 active
+p24 active
+p25 active
+p26 active
+showpage
+
+/neighboredge {pop pop pop pop} def
+
+(Fig. 4) startapage
+0.625000 hseg
+p7 p9 neighboredge
+p14 p26 neighboredge
+p17 p18 neighboredge
+p18 p19 neighboredge
+p19 p20 neighboredge
+p20 p25 neighboredge
+p21 p20 neighboredge
+p22 p25 neighboredge
+p23 p22 neighboredge
+p24 p7 neighboredge
+p25 p24 neighboredge
+p26 p9 neighboredge
+
+p1 unseen
+p2 unseen
+p3 unseen
+p4 unseen
+p5 unseen
+p6 unseen
+p7 dead
+p8 unseen
+p9 dead
+p10 unseen
+p11 unseen
+p12 unseen
+p13 unseen
+p14 active
+p15 unseen
+p16 unseen
+p17 active
+p18 active
+p19 active
+p20 active
+p21 active
+p22 active
+p23 active
+p24 dead
+p25 dead
+p26 dead
+
+0.134747 0.719370 moveto 0.200087 0.595000 lineto stroke
+0.194010 0.739874 moveto 0.218769 0.595000 lineto stroke
+0.249895 0.746833 moveto 0.260643 0.595000 lineto stroke
+0.293948 0.745415 moveto 0.267012 0.595000 lineto stroke
+0.363822 0.714753 moveto 0.300351 0.595000 lineto stroke
+0.457769 0.668671 moveto 0.425198 0.595000 lineto stroke
+0.749995 0.694209 moveto 0.767539 0.595000 lineto stroke
+showpage
